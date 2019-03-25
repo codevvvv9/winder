@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Winder</title>
+	<style>
+		* {margin: 0; padding: 0; box-sizing: border-box;}
+		:root {
+			--button-height: 32px;
+			--font-size: 14px;
+		}
+	</style>
+	<style>
+		.w-button {
+			font-size: var(--font-size);
+			height: var(--button-height);
+		}
+	</style>
+</head>
+<body>
+	<div id="app">
+		<w-button></w-button>
+	</div>
+	<script src="./node_modules/vue/dist/vue.min.js"></script>
+	<script src="./button.js"></script>
+	<script>
+		var app = new Vue({
+			el: '#app',
+			data: {
+			}
+		})
+	</script>
+</body>
+</html>
