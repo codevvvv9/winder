@@ -1,6 +1,7 @@
 <template>
   <button class="w-button" :class="{ [`icon-${iconPosition}`]: true}">
     <w-icon v-if="icon" :name="icon" class="icon"></w-icon>
+    <w-icon class="loading" name="loading"></w-icon>
     <div class="content">
       <slot></slot>
     </div>
@@ -22,6 +23,20 @@
   };
 </script>
 <style lang="scss">
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg)
+    }
+
+    ;
+
+    100% {
+      transform: rotate(360deg)
+    }
+
+    ;
+  }
+
   .w-button {
     font-size: var(--font-size);
     height: var(--button-height);
@@ -33,6 +48,7 @@
     justify-content: center;
     align-items: center;
     vertical-align: top;
+
     &:hover {
       border-color: var(--border-color-hover);
     }
@@ -44,22 +60,31 @@
     &:focus {
       outline: none;
     }
-    > .icon {
+
+    >.icon {
       order: 1;
       margin-right: .45em;
     }
-    > .content {
+
+    >.content {
       order: 2;
     }
+
     &.icon-right {
-      > .icon {
+      >.icon {
         order: 2;
         margin-left: .45em;
         margin-right: 0;
       }
-      > .content {
+
+      >.content {
         order: 1;
       }
+
+    }
+
+    .loading {
+      animation: spin 2s infinite linear;
     }
   }
 </style>
