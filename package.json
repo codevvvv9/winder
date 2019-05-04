@@ -23,5 +23,8 @@
   "homepage": "https://github.com/codevvvv9/winder#readme",
   "dependencies": {
     "vue": "^2.6.10"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.3"
   }
 }
