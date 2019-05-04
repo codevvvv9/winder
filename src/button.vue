@@ -10,7 +10,23 @@
 </template>
 <script>
   export default {
-    props: ['icon', 'iconPosition']
+    // props: ['icon', 'iconPosition'] // props的数组式写法，直接把props当成数组元素写进去即可
+    props: {
+      icon: {},
+      iconPosition: {
+        type: String,
+        default: 'left',
+        validator(value) {
+          console.log('value is', value);
+          
+          if (value !== 'left' && value !== 'right') {
+            return false
+          } else {
+            return true
+          }
+        }
+      }
+    }
   };
 </script>
 <style lang="scss">
