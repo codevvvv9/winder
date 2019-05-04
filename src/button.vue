@@ -1,11 +1,16 @@
 <template>
-  <div>
-    <button class="w-button">按钮</button>
-  </div>
+  <button class="w-button" :class="{ [`icon-${iconPosition}`]: true}">
+    <svg v-if="icon" class="icon" aria-hidden="true">
+      <use :xlink:href="`#i-${icon}`"></use>
+    </svg>
+    <div class="content">
+      <slot></slot>
+    </div>
+  </button>
 </template>
 <script>
   export default {
-    name: "w-button"
+    props: ['icon', 'iconPosition']
   };
 </script>
 <style lang="scss">
@@ -16,7 +21,10 @@
     border-radius: var(--border-radius);
     border: 1px solid var(--border-color);
     background: var(--button-bg);
-
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: top;
     &:hover {
       border-color: var(--border-color-hover);
     }
@@ -26,7 +34,24 @@
     }
 
     &:focus {
-      display: none;
+      outline: none;
+    }
+    > .icon {
+      order: 1;
+      margin-right: .45em;
+    }
+    > .content {
+      order: 2;
+    }
+    &.icon-right {
+      > .icon {
+        order: 2;
+        margin-left: .45em;
+        margin-right: 0;
+      }
+      > .content {
+        order: 1;
+      }
     }
   }
 </style>
