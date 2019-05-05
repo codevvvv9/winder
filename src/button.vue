@@ -1,7 +1,8 @@
 <template>
-  <button class="w-button" :class="{ [`icon-${iconPosition}`]: true}">
-    <w-icon v-if="icon" :name="icon" class="icon"></w-icon>
-    <w-icon class="loading" name="loading"></w-icon>
+  <button class="w-button" :class="{ [`icon-${iconPosition}`]: true}"
+    @click="click">
+    <w-icon v-if="icon && !loading" :name="icon" class="icon"></w-icon>
+    <w-icon class="loading icon" v-if="loading" name="loading"></w-icon>
     <div class="content">
       <slot></slot>
     </div>
@@ -12,6 +13,10 @@
     // props: ['icon', 'iconPosition'] // props的数组式写法，直接把props当成数组元素写进去即可
     props: {
       icon: {},
+      loading: {
+        type: Boolean,
+        default: false 
+      },
       iconPosition: {
         type: String,
         default: 'left',
@@ -19,7 +24,12 @@
           return value === 'left' || value === 'right'
         }
       }
-    }
+    },
+    methods: {
+      click() {
+        this.$emit('click')
+      }
+    },
   };
 </script>
 <style lang="scss">

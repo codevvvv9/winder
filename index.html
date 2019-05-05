@@ -31,16 +31,15 @@
   </head>
   <body>
     <div id="app">
-      <w-button>
+      <w-button :loading="isLoading" @click="isLoading = !isLoading">
         按钮
       </w-button>
-      <w-button icon="download">
+      <w-button icon="download" :loading="isLoading">
         按钮
       </w-button>
-      <w-button icon="setting" icon-position="right">
+      <w-button icon="setting" icon-position="right" :loading="isLoading">
         按钮
 			</w-button>
-			<w-icon name="download" class="icon"></w-icon>
     </div>
     <script src="./src/app.js"></script>
     <script src="//at.alicdn.com/t/font_1173001_6t5cvvg96y7.js"></script>
