@@ -5,7 +5,19 @@
 </template>
 <script>
   export default {
-
+    mounted() {
+      // console.log(`this.$children is ${this.$children}`)
+      // console.log("this.$children is", this.$children) //this.$children is (3) [VueComponent, VueComponent, VueComponent]
+      // console.log("this.$el is", this.$el) // 当前组件的所有子元素
+      // console.log("this.$el.children is", this.$el.children) // 当前组件的所有子元素
+      for (const node of this.$el.children) {
+        let name = node.nodeName.toLowerCase()
+        // console.log(`name is ${name}`);
+        if ( name !== 'button') {
+          console.error(`g-button-group的子元素应该全是 g-button,但是您写了 ${name}`)
+        }
+      }
+    },
   }
 </script>
 <style lang="scss">
@@ -14,7 +26,8 @@
     vertical-align: top; //目前写不写都可以，不知道为什么
     >.w-button {
       border-radius: 0;
-      margin-left: -1px;
+      &:not(:first-child) {margin-left: -1px;}
+      // margin-left: -1px;
 
       &:first-child {
         border-top-left-radius: var(--border-radius);
