@@ -22,11 +22,13 @@
   },
   "homepage": "https://github.com/codevvvv9/winder#readme",
   "dependencies": {
+    "chai": "^4.2.0",
     "vue": "^2.6.10",
     "vue-hot-reload-api": "^2.3.3"
   },
   "devDependencies": {
     "@vue/component-compiler-utils": "^3.0.0",
+    "chai-spies": "^1.0.0",
     "parcel-bundler": "^1.12.3",
     "vue-template-compiler": "^2.6.10"
   },

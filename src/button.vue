@@ -22,6 +22,9 @@
         type: String,
         default: 'left',
         validator(value) {
+          if (value !== 'left' && value !== "right") {
+            console.error(`iconPosition只能是left或者right,然而你输入了一个${value}`)
+          }
           return value === 'left' || value === 'right'
         }
       }
