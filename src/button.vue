@@ -8,7 +8,13 @@
   </button>
 </template>
 <script>
+  // import Vue from 'vue'
+  import Icon from './Icon.vue'
+  // Vue.component("w-icon", Icon) // 这种是全局注册，没必要
   export default {
+    components: {
+      "w-icon": Icon
+    },
     // props: ['icon', 'iconPosition'] // props的数组式写法，直接把props当成数组元素写进去即可
     props: {
       icon: {
