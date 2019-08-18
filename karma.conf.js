@@ -54,7 +54,7 @@ module.exports = function (config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['ChromeHeadless'],
+    browsers: ['ChromeHeadless'], //使用无头浏览器是为了防止travis持续集成时报错
 
 
     // Continuous Integration mode
