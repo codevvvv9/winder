@@ -1,6 +1,6 @@
 {
   "name": "winder-test",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "this is a awesome UI framework",
   "main": "dist/index.js",
   "scripts": {

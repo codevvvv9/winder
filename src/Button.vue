@@ -1,5 +1,5 @@
 <template>
-  <button class="w-button" :class="{ [`icon-${iconPosition}`]: true}" @click="click">
+  <button class="w-button useLink" :class="{ [`icon-${iconPosition}`]: true}" @click="click">
     <w-icon v-if="icon && !loading" :name="icon" class="icon"></w-icon>
     <w-icon class="loading icon" v-if="loading" name="loading"></w-icon>
     <div class="content">
