@@ -38,6 +38,7 @@
     "karma-sinon-chai": "^2.0.2",
     "mocha": "^6.2.0",
     "parcel-bundler": "^1.12.3",
+    "sass": "^1.22.10",
     "sinon": "^7.4.1",
     "sinon-chai": "^3.3.0",
     "vue-template-compiler": "^2.6.10"
