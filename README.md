@@ -6,9 +6,9 @@
 
 ## Introduction
 
-1. `CSS`样式
+1. `CSS` style
 
-使用本框架前，先开启`border-box`
+Before using this framework, you should use 'border-box'
 
 ```css
 *,
@@ -18,11 +18,11 @@
 }
 ```
 
-该特性`IE 8`以上支持
+This feature is supported by IE8 and above.
 
 ---
 
-你还需要设置全局颜色等变量(后续会改为`sass变量`）
+You also need to set variables such as global colors (subsequently changed to `sass variable`)
 
 ```css
 :root {
@@ -37,15 +37,15 @@
 }
 ```
 
-该特性`IE15`以上才支持
+This feature is supported by IE15 and above.
 
-2. 安装 `winder-test`
+2. install `winder-test`
 
 ```javascript
 npm i --save winder-test
 ```
 
-3. 引入`winder-test`
+3. import `winder-test`
 
 ```javascript
 import { Button } from "winder-test";
