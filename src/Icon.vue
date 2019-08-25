@@ -6,10 +6,16 @@
 <script>
 import './svg'
   export default {
-    props: ['name']
+    name: "WinderIcon",
+    props: {
+      name: {
+        type: String,
+        default: "setting"
+      },
+    }
   }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
   .w-icon {
     width: 1em;
     height: 1em;

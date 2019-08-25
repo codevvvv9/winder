@@ -5,6 +5,7 @@
 </template>
 <script>
   export default {
+    name: "WinderButtonGroup",
     mounted() {
       // console.log(`this.$children is ${this.$children}`)
       // console.log("this.$children is", this.$children) //this.$children is (3) [VueComponent, VueComponent, VueComponent]
@@ -20,7 +21,7 @@
     },
   }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
   .w-button-group {
     display: inline-flex;
     vertical-align: top; //目前写不写都可以，不知道为什么

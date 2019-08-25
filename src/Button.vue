@@ -12,6 +12,7 @@
   import Icon from './Icon.vue'
   // Vue.component("w-icon", Icon) // 这种是全局注册，没必要
   export default {
+    name: "WinderButton",
     components: {
       "w-icon": Icon
     },
@@ -42,19 +43,10 @@
     },
   };
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
   @keyframes spin {
-    0% {
-      transform: rotate(0deg)
-    }
-
-    ;
-
-    100% {
-      transform: rotate(360deg)
-    }
-
-    ;
+    0% { transform: rotate(0deg) };
+    100% { transform: rotate(360deg) };
   }
 
   .w-button {
@@ -69,42 +61,23 @@
     align-items: center;
     vertical-align: top;
 
-    &:hover {
-      border-color: var(--border-color-hover);
-    }
+    &:hover { border-color: var(--border-color-hover); }
 
-    &:active {
-      background-color: var(--button-active-bg);
-    }
+    &:active { background-color: var(--button-active-bg); }
 
-    &:focus {
-      outline: none;
-    }
+    &:focus { outline: none; }
 
-    >.icon {
-      order: 1;
-      margin-right: .45em;
-    }
+    >.icon { order: 1; margin-right: .45em; }
 
-    >.content {
-      order: 2;
-    }
+    >.content { order: 2; }
 
     &.icon-right {
-      >.icon {
-        order: 2;
-        margin-left: .45em;
-        margin-right: 0;
-      }
+      >.icon { order: 2; margin-left: .45em; margin-right: 0; }
 
-      >.content {
-        order: 1;
-      }
+      >.content { order: 1; }
 
     }
 
-    .loading {
-      animation: spin 2s infinite linear;
-    }
+    .loading { animation: spin 2s infinite linear; }
   }
 </style>

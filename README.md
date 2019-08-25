@@ -58,11 +58,6 @@ export default {
 };
 ```
 
-4. 如果使用`icon`,需要引入`svg`
-
-```javascript
-```
-
 ## Ecosystem
 
 ## Documentation
