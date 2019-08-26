@@ -12,7 +12,7 @@ describe('Input', () => {
   describe("props", () => {
     const Constructor = Vue.extend(Input)
     let vm
-    afterEach( () => {
+    afterEach(() => {
       vm.$destroy()
     })
     it('接受value', () => {
@@ -54,66 +54,26 @@ describe('Input', () => {
       const errorMessage = vm.$el.querySelector(".error-message");
       expect(errorMessage.innerText).to.equal("你写错了")
     })
-    describe("事件", () => {
-      const Constructor = Vue.extend(Input)
-      let vm
-      afterEach(() => {
-        vm.$destroy()
-      })
-      it("支持change事件", () => {
+  })
+  describe("事件", () => {
+    const Constructor = Vue.extend(Input)
+    let vm
+    afterEach(() => {
+      vm.$destroy()
+    })
+    it("支持change/input/focus/blur事件", () => {
+      ['change', 'input', 'focus', 'blur'].forEach( (eventName) => {
         vm = new Constructor({}).$mount()
         const callback = sinon.fake();
-        vm.$on('change', callback)
+        vm.$on(eventName, callback)
         //重点是如何主动触发事件
-        var event = new Event('change');
+        var event = new Event(eventName);
         var inputElement = vm.$el.querySelector("input")
         // Dispatch the event.
         inputElement.dispatchEvent(event);
-        //测试change是否触发了
+        //测试事件是否触发了
         expect(callback).to.have.been.called
-        //测试change事件的第一个参数
-        expect(callback).to.have.been.calledWith(event)
-      })
-      it("支持input事件", () => {
-        vm = new Constructor({}).$mount()
-        const callback = sinon.fake();
-        vm.$on('input', callback)
-        //重点是如何主动触发事件
-        var event = new Event('input');
-        var inputElement = vm.$el.querySelector("input")
-        // Dispatch the event.
-        inputElement.dispatchEvent(event);
-        //测试change是否触发了
-        expect(callback).to.have.been.called
-        //测试change事件的第一个参数
-        expect(callback).to.have.been.calledWith(event)
-      })
-      it("支持focus事件", () => {
-        vm = new Constructor({}).$mount()
-        const callback = sinon.fake();
-        vm.$on('focus', callback)
-        //重点是如何主动触发事件
-        var event = new Event('focus');
-        var inputElement = vm.$el.querySelector("input")
-        // Dispatch the event.
-        inputElement.dispatchEvent(event);
-        //测试change是否触发了
-        expect(callback).to.have.been.called
-        //测试change事件的第一个参数
-        expect(callback).to.have.been.calledWith(event)
-      })
-      it("支持blur事件", () => {
-        vm = new Constructor({}).$mount()
-        const callback = sinon.fake();
-        vm.$on('blur', callback)
-        //重点是如何主动触发事件
-        var event = new Event('blur');
-        var inputElement = vm.$el.querySelector("input")
-        // Dispatch the event.
-        inputElement.dispatchEvent(event);
-        //测试change是否触发了
-        expect(callback).to.have.been.called
-        //测试change事件的第一个参数
+        //测试事件的第一个参数
         expect(callback).to.have.been.calledWith(event)
       })
     })
