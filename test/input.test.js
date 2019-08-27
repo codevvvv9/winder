@@ -68,13 +68,19 @@ describe('Input', () => {
         vm.$on(eventName, callback)
         //重点是如何主动触发事件
         var event = new Event(eventName);
+        Object.defineProperty(event, 'target', {
+          value: {
+            value: 'hi'
+          },
+          enumerable: true
+        })
         var inputElement = vm.$el.querySelector("input")
         // Dispatch the event.
         inputElement.dispatchEvent(event);
         //测试事件是否触发了
         expect(callback).to.have.been.called
         //测试事件的第一个参数
-        expect(callback).to.have.been.calledWith(event)
+        expect(callback).to.have.been.calledWith('hi')
       })
     })
   })

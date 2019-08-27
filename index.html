@@ -37,7 +37,10 @@
       <div class="box">
         <!-- <w-input value="吴林" disabled></w-input> -->
         <!-- <w-input value="林少" readonly></w-input> -->
-        <w-input value="吴少" @change="inputChange"></w-input>
+        <!-- <w-input value="吴少" @change="inputChange"></w-input> -->
+        <w-input v-model="message"></w-input>
+        <p>{{ message }}</p>
+        <button @click="changeMessage">changeMessage</button>
       </div>
       <div class="box">
         <!-- <w-input value="吴" error="名字至少是两位"></w-input> -->

@@ -13,20 +13,16 @@ new Vue({
   el: '#app',
   data() {
     return {
-      isLoading: false
+      isLoading: false,
+      message: 'hi, v-model'
     }
   },
   created() {
-    setTimeout(() => {
-      let event = new Event("change")
-      let inputElement = this.$el.querySelector("input")
-      // Dispatch the event.
-      inputElement.dispatchEvent(event);
-    }, 300)
+    
   },
   methods: {
-    inputChange(e) {
-      console.log("$event is", e);
+    changeMessage() {
+      this.message += '!'
     }
   },
 })
