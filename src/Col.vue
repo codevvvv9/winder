@@ -1,5 +1,5 @@
 <template>
-  <div class="col" :class="[`col-${span}`]">
+  <div class="col" :class="[span && `col-${span}`, offset && `offset-${offset}`]">
     <slot></slot>
   </div>
 </template>
@@ -12,8 +12,11 @@
           if (value < 0 || value > 24) {
             console.error(`span的值只能在(0, 24]之间设置,然而你却设置了span的值为${value}`)
           }
-          return value >0 && value < 25
+          return value > 0 && value < 25
         }
+      },
+      offset: {
+        type: [Number, String]
       }
     }
   }
@@ -35,6 +38,15 @@
         // set the background-color to cornflowerblue and
         // each time lighten the color slightly
         width: ($n / 24) * 100%;
+      }
+    }
+
+    $class-prefix: offset-;
+    @for $n from 1 through 24 {
+      &.#{$class-prefix}#{$n} {
+        // set the background-color to cornflowerblue and
+        // each time lighten the color slightly
+        margin-left: ($n / 24) * 100%;
       }
     }
   }
