@@ -1,7 +1,9 @@
 <template>
   <div class="col" :class="[span && `col-${span}`, offset && `offset-${offset}`]"
     :style="{paddingLeft: gutter/2 + 'px', paddingRight: gutter/2 + 'px'}">
-    <slot></slot>
+    <div style="border: 1px solid green;">
+      <slot></slot>
+    </div>
   </div>
 </template>
 <script>
@@ -31,22 +33,20 @@
   .col {
     height: 100px;
     width: 50%;
-    border: 1px solid red;
-    background-color: #666666;
+    // border: 1px solid red;
+    // background-color: #666666;
+    //grid每一行的布局所占百分比
     $class-prefix: col-;
-
     // loops through 100 times
     @for $n from 1 through 24 {
-
       // for each $col_#{n}
       &.#{$class-prefix}#{$n} {
-
         // set the background-color to cornflowerblue and
         // each time lighten the color slightly
         width: ($n / 24) * 100%;
       }
     }
-
+    //grid每一行之间的偏移量
     $class-prefix: offset-;
     @for $n from 1 through 24 {
       &.#{$class-prefix}#{$n} {
