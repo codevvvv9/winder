@@ -1,5 +1,5 @@
 <template>
-  <div class="row" :style="rowStyle">
+  <div class="row" :style="rowStyle" :class="rowClass">
     <slot></slot>
   </div>
 </template>
@@ -8,6 +8,12 @@
     props: {
       gutter: {
         type: [Number, String]
+      },
+      align: {
+        type: String,
+        validator(value) {
+          return ['left', 'center', "right"].includes(value)
+        }
       }
     },
     mounted() {
@@ -23,6 +29,12 @@
           "margin-left": -gutter / 2 + 'px',
           "margin-right": -gutter / 2 + 'px'
         }
+      },
+      //计算row的位置
+      rowClass() {
+        let {align} = this
+        console.log('align', align);
+        return [align && `align-${align}`]
       }
     },
   }
@@ -30,5 +42,14 @@
 <style lang="scss" scoped>
   .row {
     display: flex;
+    &.align-left {
+      justify-content: flex-start;
+    }
+    &.align-right {
+      justify-content: flex-end;
+    }
+    &.align-center {
+      justify-content: center;
+    }
   }
 </style>

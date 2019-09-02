@@ -33,8 +33,17 @@
     </style>
   </head>
   <body>
+    <style>
+      .demoBox {
+        border: 1px solid greenyellow;
+        height: 40px;
+        background: gray;
+      }
+      .cloDemo {
+      }
+    </style>
     <div id="app">
-      <div style="border: 1px solid black">
+      <!-- <div style="border: 1px solid black">
         <w-row gutter="20">
           <w-col>1</w-col>
           <w-col>2</w-col>
@@ -68,7 +77,33 @@
           <w-col span="4" offset="6">11</w-col>
           <w-col span="8" offset="2">11</w-col>
         </w-row>
-      </div>
+      </div> -->
+      <w-row class="topBar">
+        <w-col class="demoBox" span="9">
+          <w-row align="left">
+            <w-col>1</w-col>
+            <w-col>2</w-col>
+            <w-col>3</w-col>
+            <w-col>4</w-col>
+          </w-row>
+        </w-col>
+        <w-col class="demoBox" span="15">
+          <w-row align="right">
+            <w-col class="colDemo">1</w-col>
+            <w-col class="colDemo">2</w-col>
+            <w-col class="colDemo">3</w-col>
+            <w-col class="colDemo">4</w-col>
+            <w-col class="colDemo">5</w-col>
+            <w-col class="colDemo">6</w-col>
+            <w-col class="colDemo">7</w-col>
+          </w-row>
+        </w-col>
+      </w-row>
+      <w-row class="search-and-qrcode">
+        <w-col class="demoBox" span="4">1</w-col>
+        <w-col class="demoBox" span="16">2</w-col>
+        <w-col class="demoBox" span="4">3</w-col>
+      </w-row>
       <div class="box">
         <!-- <w-input value="吴林" disabled></w-input> -->
         <!-- <w-input value="林少" readonly></w-input> -->

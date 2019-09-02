@@ -49,7 +49,7 @@
 <style lang="scss" scoped>
   .col {
     height: 100px;
-    width: 50%;
+    // width: 50%;
     //grid每一行的布局所占百分比
     $class-prefix: col-;
 
