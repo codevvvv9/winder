@@ -27,10 +27,7 @@
     computed: {
       //计算span
       colClass() {
-        let {
-          span,
-          offset
-        } = this
+        let { span, offset } = this
         return [
           span && `col-${span}`,
           offset && `offset-${offset}`
@@ -48,7 +45,7 @@
 </script>
 <style lang="scss" scoped>
   .col {
-    height: 100px;
+    // height: 100px;
     // width: 50%;
     //grid每一行的布局所占百分比
     $class-prefix: col-;

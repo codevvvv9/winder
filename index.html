@@ -11,6 +11,7 @@
         padding: 0;
         box-sizing: border-box;
       }
+      img {max-width: 100%;}
       :root {
         --button-height: 32px;
         --font-size: 14px;
@@ -36,10 +37,11 @@
     <style>
       .demoBox {
         border: 1px solid greenyellow;
-        height: 40px;
+        min-height: 40px;
         background: gray;
       }
-      .cloDemo {
+      .logoWrapper {
+        padding: 10px;
       }
     </style>
     <div id="app">
@@ -89,7 +91,8 @@
         </w-col>
         <w-col class="demoBox" span="15">
           <w-row align="right">
-            <w-col class="colDemo">1</w-col>
+            <w-col class="colDemo">
+            </w-col>
             <w-col class="colDemo">2</w-col>
             <w-col class="colDemo">3</w-col>
             <w-col class="colDemo">4</w-col>
@@ -99,9 +102,17 @@
           </w-row>
         </w-col>
       </w-row>
-      <w-row class="search-and-qrcode">
-        <w-col class="demoBox" span="4">1</w-col>
-        <w-col class="demoBox" span="16">2</w-col>
+      <w-row class="search-and-qrcode" align="center">
+        <w-col class="demoBox" span="4">
+          <w-row align="center">
+            <w-col>
+              <div class="logoWrapper">
+                <img class="logo" src="https://img.alicdn.com/tfs/TB1sy1yfO_1gK0jSZFqXXcpaXXa-190-140.gif" alt="">
+              </div>
+            </w-col>
+          </w-row>
+        </w-col>
+        <w-col class="demoBox" span="16">23333</w-col>
         <w-col class="demoBox" span="4">3</w-col>
       </w-row>
       <div class="box">
