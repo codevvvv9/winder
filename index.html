@@ -45,10 +45,10 @@
       }
     </style>
     <div id="app">
-      <!-- <div style="border: 1px solid black">
-        <w-row gutter="20">
-          <w-col>1</w-col>
-          <w-col>2</w-col>
+      <div style="border: 1px solid black">
+        <!-- <w-row gutter="20">
+          <w-col >1</w-col>
+          <w-col>2222</w-col>
         </w-row>
         <w-row gutter="20">
           <w-col>1</w-col>
@@ -60,10 +60,10 @@
           <w-col>2</w-col>
           <w-col>3</w-col>
           <w-col>4</w-col>
-        </w-row>
-        <w-row>
-          <w-col span="2">1</w-col>
-          <w-col span="20" offset="2">11</w-col>
+        </w-row> -->
+        <w-row gutter="20">
+          <w-col span="2" :phone="{span: 12}">1</w-col>
+          <w-col span="20" offset="2" :phone="{span: 12, offset: 0}">11</w-col>
         </w-row>
         <w-row>
           <w-col span="4">1</w-col>
@@ -79,7 +79,7 @@
           <w-col span="4" offset="6">11</w-col>
           <w-col span="8" offset="2">11</w-col>
         </w-row>
-      </div> -->
+      </div>
       <w-row class="topBar">
         <w-col class="demoBox" span="9">
           <w-row align="left">
@@ -115,44 +115,6 @@
         <w-col class="demoBox" span="16">23333</w-col>
         <w-col class="demoBox" span="4">3</w-col>
       </w-row>
-      <div class="box">
-        <!-- <w-input value="吴林" disabled></w-input> -->
-        <!-- <w-input value="林少" readonly></w-input> -->
-        <!-- <w-input value="吴少" @change="inputChange"></w-input> -->
-        <w-input v-model="message"></w-input>
-        <p>{{ message }}</p>
-        <button @click="changeMessage">changeMessage</button>
-      </div>
-      <div class="box">
-        <!-- <w-input value="吴" error="名字至少是两位"></w-input> -->
-      </div>
-      <div class="box">
-        <w-button :loading="isLoading" @click="isLoading = !isLoading">
-          按钮
-        </w-button>
-        <w-button icon="download" :loading="isLoading">
-          按钮
-        </w-button>
-        <w-button icon="setting" icon-position="right" :loading="isLoading">
-          按钮
-        </w-button>
-        <w-button-group>
-          <!-- <div>
-            <w-button icon="left">
-              按钮
-            </w-button>
-          </div> -->
-          <w-button icon="left">
-            按钮
-          </w-button>
-          <w-button>
-            更多
-          </w-button>
-          <w-button icon="right">
-            按钮
-          </w-button>
-        </w-button-group>
-      </div>
     </div>
     <script src="./src/app.js"></script>
   </body>
