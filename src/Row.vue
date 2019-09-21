@@ -42,6 +42,8 @@
 <style lang="scss" scoped>
   .row {
     display: flex;
+    //允许换行
+    flex-wrap: wrap;
     &.align-left {
       justify-content: flex-start;
     }
