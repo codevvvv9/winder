@@ -35,99 +35,32 @@
   </head>
   <body>
     <style>
-      .demoBox {
-        border: 1px solid greenyellow;
-        min-height: 40px;
+      .demo {
+        border: 1px solid #666666;
+        min-height: 100px;
         background: gray;
-      }
-      .logoWrapper {
-        padding: 10px;
       }
     </style>
     <div id="app">
-      <div style="border: 1px solid black">
-        <!-- <w-row gutter="20">
-          <w-col >1</w-col>
-          <w-col>2222</w-col>
-        </w-row>
-        <w-row gutter="20">
-          <w-col>1</w-col>
-          <w-col>2</w-col>
-          <w-col>3</w-col>
-        </w-row>
-        <w-row gutter="20">
-          <w-col>1</w-col>
-          <w-col>2</w-col>
-          <w-col>3</w-col>
-          <w-col>4</w-col>
-        </w-row> -->
-        <w-row gutter="20">
-          <w-col span="24" 
-            :ipad="{span: 8}"
-            :narrow-pc="{span: 4}"
-            :pc="{span: 2}"
-            :wide-pc="{span: 1}"
-          >
-          1
+      <w-row>
+        <w-col span="24" :ipad="{span: 12}" :narrow-pc="{span: 8}">
+          <div class="demo"></div>
         </w-col>
-          <w-col span="24" 
-            :ipad="{span: 16}"
-            :narrow-pc="{span: 20}"
-            :pc="{span: 22}"
-            :wide-pc="{span: 23}"
-          >
-          11
+        <w-col span="24" :ipad="{span: 12}" :narrow-pc="{span: 8}">
+          <div class="demo"></div>
         </w-col>
-        </w-row>
-        <w-row>
-          <w-col span="4">1</w-col>
-          <w-col span="18" offset="2">11</w-col>
-        </w-row>
-        <w-row>
-          <w-col span="4">1</w-col>
-          <w-col span="8" offset="2">11</w-col>
-          <w-col span="8" offset="2">11</w-col>
-        </w-row>
-        <w-row>
-          <w-col span="4">1</w-col>
-          <w-col span="4" offset="6">11</w-col>
-          <w-col span="8" offset="2">11</w-col>
-        </w-row>
-      </div>
-      <w-row class="topBar">
-        <w-col class="demoBox" span="9">
-          <w-row align="left">
-            <w-col>1</w-col>
-            <w-col>2</w-col>
-            <w-col>3</w-col>
-            <w-col>4</w-col>
-          </w-row>
+        <w-col span="24" :ipad="{span: 12}" :narrow-pc="{span: 8}">
+          <div class="demo"></div>
         </w-col>
-        <w-col class="demoBox" span="15">
-          <w-row align="right">
-            <w-col class="colDemo">
-            </w-col>
-            <w-col class="colDemo">2</w-col>
-            <w-col class="colDemo">3</w-col>
-            <w-col class="colDemo">4</w-col>
-            <w-col class="colDemo">5</w-col>
-            <w-col class="colDemo">6</w-col>
-            <w-col class="colDemo">7</w-col>
-          </w-row>
+        <w-col span="24" :ipad="{span: 12}" :narrow-pc="{span: 8}">
+          <div class="demo"></div>
         </w-col>
-      </w-row>
-      <w-row class="search-and-qrcode" align="center">
-        <w-col class="demoBox" span="4">
-          <w-row align="center">
-            <w-col>
-              <div class="logoWrapper">
-                <img class="logo" src="https://img.alicdn.com/tfs/TB1sy1yfO_1gK0jSZFqXXcpaXXa-190-140.gif" alt="">
-              </div>
-            </w-col>
-          </w-row>
+        <w-col span="24" :ipad="{span: 12}" :narrow-pc="{span: 8}">
+          <div class="demo"></div>
         </w-col>
-        <w-col class="demoBox" span="16">23333</w-col>
-        <w-col class="demoBox" span="4">3</w-col>
+        <w-col span="24" :ipad="{span: 12}" :narrow-pc="{span: 8}">
+          <div class="demo"></div>
+        </w-col>
       </w-row>
     </div>
     <script src="./src/app.js"></script>
