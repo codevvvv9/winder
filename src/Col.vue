@@ -25,31 +25,68 @@
           return value > 0 && value < 25
         }
       },
-      offset: { type: [Number, String] },
+      offset: {
+        type: [Number, String]
+      },
       // phone: { type: Object, validator },
-      ipad: { type: Object, validator, },
-      narrowPc: { type: Object, validator, },
-      pc: { type: Object, validator, },
-      widePc: { type: Object, validator, }
+      ipad: {
+        type: Object,
+        validator,
+      },
+      narrowPc: {
+        type: Object,
+        validator,
+      },
+      pc: {
+        type: Object,
+        validator,
+      },
+      widePc: {
+        type: Object,
+        validator,
+      }
     },
     data() {
       return {
         gutter: 0
       }
     },
+    methods: {
+      createColClasses(obj, string = '') {
+        if (!obj) {
+          return []
+        }
+        let classArray = []
+        if (obj.span) {
+          classArray.push(`col-${string}${obj.span}`)
+        }
+        if (obj.offset) {
+          classArray.push(`offset-${string}${obj.offset}`)
+        }
+        return classArray
+      }
+    },
     computed: {
       //计算span
       colClass() {
-        let { span, offset, ipad, narrowPc, pc, widePc } = this
-        let phoneClass = []
+        let {
+          span,
+          offset,
+          ipad,
+          narrowPc,
+          pc,
+          widePc
+        } = this
+        let createColClasses = this.createColClasses
         return [
-          span && `col-${span}`,
-          offset && `offset-${offset}`,
-          // ...(phone && [`col-phone-${phone.span}`]),
-          ...(ipad ? [`col-ipad-${ipad.span}`] : []),
-          ...(narrowPc ? [`col-narrow-pc-${narrowPc.span}`] : []),
-          ...(pc ? [`col-pc-${pc.span}`] : []),
-          ...(widePc ? [`col-wide-pc-${widePc.span}`] : []),
+          ...createColClasses({
+            span,
+            offset
+          }),
+          ...createColClasses(ipad, 'ipad-'),
+          ...createColClasses(narrowPc, 'narrow-pc-'),
+          ...createColClasses(pc, 'pc-'),
+          ...createColClasses(widePc, 'wide-pc-'),
         ]
       },
       //计算gutter
@@ -84,7 +121,7 @@
       }
     }
 
-    @media (min-width: 577px){
+    @media (min-width: 577px) {
       $class-prefix: col-ipad-;
 
       @for $n from 1 through 24 {
@@ -102,7 +139,7 @@
       }
     }
 
-    @media (min-width: 769px){
+    @media (min-width: 769px) {
       $class-prefix: col-narrow-pc-;
 
       @for $n from 1 through 24 {
@@ -120,7 +157,7 @@
       }
     }
 
-    @media (min-width: 993px){
+    @media (min-width: 993px) {
       $class-prefix: col-pc-;
 
       @for $n from 1 through 24 {
