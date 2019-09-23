@@ -34,9 +34,10 @@ describe('Row', () => {
       expect(getComputedStyle(cols[0]).paddingRight).to.eq('10px')
       expect(getComputedStyle(cols[1]).paddingLeft).to.eq('10px')
       done()
+      vm.$el.remove()
+      vm.$destroy()
     }, 1000);
-    vm.$el.remove()
-    vm.$destroy()
+    
   })
   it('接受align属性', () => {
     const div = document.createElement('div')
