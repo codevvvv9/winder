@@ -33,7 +33,6 @@
       //计算row的位置
       rowClass() {
         let {align} = this
-        console.log('align', align);
         return [align && `align-${align}`]
       }
     },
