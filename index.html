@@ -23,7 +23,6 @@
         --border-color-hover: #666;
       }
       #app {
-        margin: 20px;
       }
       body {
         font-size: var(--font-size);
@@ -38,15 +37,14 @@
       .demo {
         border: 1px solid #666666;
         min-height: 100px;
-        background: gray;
       }
     </style>
     <div id="app">
-      <w-row>
-        <w-col span="23" offset="1" :ipad="{span: 12, offset: 12}" :narrow-pc="{span: 8}">
-          <div class="demo"></div>
-        </w-col>
-      </w-row>
+      <w-layout style="height: 100vh;">
+        <w-header class="demo">header</w-header>
+        <w-content class="demo">content</w-content>
+        <w-footer class="demo">footer</w-footer>
+      </w-layout>
     </div>
     <script src="./src/app.js"></script>
   </body>
