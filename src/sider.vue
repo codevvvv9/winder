@@ -5,7 +5,7 @@
 </template>
 <script>
   export default {
-
+    name: "WinderSider"
   }
 </script>
 <style lang="scss" scoped>
