@@ -11,7 +11,9 @@
         padding: 0;
         box-sizing: border-box;
       }
-      img {max-width: 100%;}
+      img {
+        max-width: 100%;
+      }
       :root {
         --button-height: 32px;
         --font-size: 14px;
@@ -34,19 +36,30 @@
   </head>
   <body>
     <style>
-      .demo {
-        border: 1px solid #666666;
-        min-height: 100px;
+      .sider {
+        background: #333;
+        width: 330px;
+      }
+      .sider.slide-enter, .sider.slide-leave-to /* .slide-leave-active below version 2.1.8 */ {
+        margin-left: -330px;
+      }
+      .header {
+        background: #999999;
+        height: 100px;
+      }
+      .footer {
+        background: #cccccc;
+        height: 50px;
       }
     </style>
     <div id="app">
       <w-layout style="height: 100vh;">
-        <w-header class="demo">header</w-header>
+        <w-sider>sider</w-sider>
         <w-layout>
-          <w-sider class="demo">sider</w-sider>
-          <w-content class="demo">content</w-content>
+          <w-header>header</w-header>
+          <w-content>content</w-content>
+          <w-footer>footer</w-footer>
         </w-layout>
-        <w-footer class="demo">footer</w-footer>
       </w-layout>
     </div>
     <script src="./src/app.js"></script>
