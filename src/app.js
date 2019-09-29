@@ -10,6 +10,8 @@ import Header from './Header.vue'
 import Content from './Content.vue'
 import Footer from './Footer.vue'
 import Sider from './Sider.vue'
+import Toast from './Toast.vue'
+import plugin from './plugin'
 
 Vue.component('w-button', Button)
 Vue.component('w-icon', Icon)
@@ -22,6 +24,8 @@ Vue.component("w-header", Header)
 Vue.component("w-content", Content)
 Vue.component("w-footer", Footer)
 Vue.component("w-sider", Sider)
+Vue.component("w-toast", Toast)
+Vue.use(plugin)
 
 new Vue({
   el: '#app',
@@ -32,7 +36,7 @@ new Vue({
     }
   },
   created() {
-    
+    this.$toast()
   },
   methods: {
     changeMessage() {
