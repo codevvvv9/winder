@@ -36,11 +36,13 @@ new Vue({
     }
   },
   created() {
-    this.$toast()
   },
   methods: {
     changeMessage() {
       this.message += '!'
+    },
+    showToast() {
+      this.$toast('hello, toast')
     }
   },
 })
