@@ -35,14 +35,20 @@ new Vue({
       message: 'hi, v-model'
     }
   },
-  created() {
-  },
+  created() {},
   methods: {
     changeMessage() {
       this.message += '!'
     },
     showToast() {
-      this.$toast('hello, toast')
+      this.$toast('hello, toast', {
+        closeButton: {
+          text: "关闭toast",
+          callback() {
+            console.log('关闭被触发了');
+          }
+        }
+      })
     }
   },
 })
