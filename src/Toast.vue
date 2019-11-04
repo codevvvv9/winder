@@ -41,11 +41,15 @@
         this.$el.remove();
         this.$destroy();
       },
+      //测试，可以在callback中传递实例
+      log() {
+        console.log('测试');
+      },
       onClickClose() {
         this.close()
         //通知调用的被关闭了
         if (this.closeButton && typeof this.closeButton.callback === "function") {
-          this.closeButton.callback() 
+          this.closeButton.callback(this) //这里this === toast实例
         }
       }
     }

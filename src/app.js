@@ -44,7 +44,8 @@ new Vue({
       this.$toast('hello, toast', {
         closeButton: {
           text: "关闭toast",
-          callback() {
+          callback(toast) {
+            toast.log()
             console.log('关闭被触发了');
           }
         }
