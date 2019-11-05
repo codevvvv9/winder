@@ -41,14 +41,15 @@ new Vue({
       this.message += '!'
     },
     showToast() {
-      this.$toast('hello, toast', {
+      this.$toast('<p><strong>hi</strong>我是一个html标签<p>', {
         closeButton: {
           text: "关闭toast",
           callback(toast) {
             toast.log()
             console.log('关闭被触发了');
           }
-        }
+        },
+        enableHtml: false
       })
     }
   },
