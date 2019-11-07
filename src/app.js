@@ -49,7 +49,9 @@ new Vue({
             console.log('关闭被触发了');
           }
         },
-        enableHtml: true
+        enableHtml: true,
+        autoClose: false,
+        position: "bottom"
       })
     }
   },

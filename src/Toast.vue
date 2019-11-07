@@ -1,5 +1,5 @@
 <template>
-  <div class="toast" ref="toast">
+  <div class="toast" ref="toast" :class="toastClasses">
     <div class="message">
       <slot v-if="!enableHtml"></slot>
       <div v-else v-html="$slots.default[0]"></div>
@@ -32,9 +32,31 @@
       enableHtml: {
         type: Boolean,
         default: false
+      },
+      position: {
+        type: String,
+        default: "top",
+        validator(value) {
+          let positionArray = ['top', 'bottom', 'middle']
+          let index = positionArray.indexOf(value)
+          if (index >= 0) {
+            return true
+          } else {
+            console.error(`position is not legal, you enter a error value, ${value}`)
+            return true
+          }
+        }
       }
     },
     created() {},
+    computed: {
+      toastClasses() {
+        let { position } = this
+        return [
+          `position-${position}`
+        ]
+      }
+    },
     mounted() {
       this.updateStyles()
       this.executeClose()
@@ -94,9 +116,11 @@
     box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.5);
     color: white;
     padding: 0 16px;
+
     .message {
       padding: 8px 0;
     }
+
     .close {
       padding-left: 16px;
       flex-shrink: 0;
