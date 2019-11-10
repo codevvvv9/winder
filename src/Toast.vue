@@ -106,7 +106,6 @@
     position: fixed;
     min-height: $toast-min-height;
     left: 50%;
-    transform: translateX(-50%);
     font-size: $font-size;
     line-height: $line-height;
     display: flex;
@@ -130,6 +129,18 @@
       border-left: 1px solid #666;
       // height: 100%;
       margin-left: 16px;
+    }
+    &.position-top {
+      top: 0;
+      transform: translateX(-50%);
+    }
+    &.position-bottom {
+      bottom: 0;
+      transform: translateX(-50%);
+    }
+    &.position-middle {
+      top: 50%;
+      transform: translate(-50%, -50%);
     }
   }
 </style>
