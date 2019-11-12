@@ -80,6 +80,7 @@
       },
       close() {
         this.$el.remove();
+        this.$emit("close")
         this.$destroy();
       },
       //测试，可以在callback中传递实例
