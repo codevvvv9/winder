@@ -40,7 +40,16 @@ new Vue({
     changeMessage() {
       this.message += "!";
     },
-    showToast() {
+    showToast1() {
+      this.showToast("top")
+    },
+    showToast2() {
+      this.showToast("middle")
+    },
+    showToast3() {
+      this.showToast("bottom")
+    },
+    showToast(position) {
       this.$toast(
         "<p><strong>hi </strong>你好好我是一个html标签你好好我是一个html标签你好好我是一个html标签你好好我是一个html标签你好好我是一个html标签你好好我是一个html标签你好好我是一个html标签<p>",
         {
@@ -53,7 +62,7 @@ new Vue({
           },
           enableHtml: true,
           autoClose: false,
-          position: "middle"
+          position
         }
       );
     }
