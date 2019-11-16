@@ -15,12 +15,11 @@ export default {
   name: "WinderToast",
   props: {
     autoClose: {
-      type: Boolean,
-      default: true
-    },
-    autoCloseDelay: {
-      type: Number,
-      default: 50
+      type: [Boolean, Number],
+      default: 5,
+      validator(value) {
+        return value === false || typeof value === 'number' 
+      }
     },
     closeButton: {
       type: Object,
@@ -69,16 +68,13 @@ export default {
       if (this.autoClose) {
         setTimeout(() => {
           this.close();
-        }, this.autoCloseDelay * 1000);
+        }, this.autoClose * 1000);
       }
     },
     //使用js更新线条的高度
     updateStyles() {
       this.$nextTick(() => {
-        console.log(
-          "this.$refs.toast",
-          this.$refs.toast.getBoundingClientRect()
-        );
+        // console.log( "this.$refs.toast", this.$refs.toast.getBoundingClientRect() );
         this.$refs.line.style.height = `${
           this.$refs.toast.getBoundingClientRect().height
         }px`;
