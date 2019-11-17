@@ -27,7 +27,7 @@ describe("Toast", () => {
         done();
       });
     });
-    it("接受closeButton", () => {
+    it("接受closeButton", (done) => {
       const callback = sinon.fake();
       const Constructor = Vue.extend(Toast);
       const vm = new Constructor({
@@ -40,8 +40,12 @@ describe("Toast", () => {
       }).$mount();
       let closeButtonElement = vm.$el.querySelector(".close");
       expect(closeButtonElement.textContent.trim()).to.eq("关闭吧");
-      closeButtonElement.click()
-      expect(callback).to.have.been.called
+      //解决奇怪的bug，.style的bug
+      setTimeout(() => {
+        closeButtonElement.click()
+        expect(callback).to.have.been.called
+        done()
+      }, 200);
     });
     it("接受enableHtml", () => {
       const Constructor = Vue.extend(Toast);

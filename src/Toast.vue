@@ -75,6 +75,7 @@ export default {
     updateStyles() {
       this.$nextTick(() => {
         // console.log( "this.$refs.toast", this.$refs.toast.getBoundingClientRect() );
+        console.log('this.$refs.line', this.$refs.line);
         this.$refs.line.style.height = `${
           this.$refs.toast.getBoundingClientRect().height
         }px`;
