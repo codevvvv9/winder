@@ -12,7 +12,17 @@ import Footer from "./Footer.vue";
 import Sider from "./Sider.vue";
 import Toast from "./Toast.vue";
 import plugin from "./plugin";
+import Tabs from './Tabs.vue'
+import TabsBody from './TabsBody.vue'
+import TabsHead from './TabsHead.vue'
+import TabsItem from './TabsItem.vue'
+import TabsPane from './TabsPane.vue'
 
+Vue.component("w-tabs", Tabs)
+Vue.component("w-tabs-body", TabsBody)
+Vue.component("w-tabs-head", TabsHead)
+Vue.component("w-tabs-item", TabsItem)
+Vue.component("w-tabs-pane", TabsPane)
 Vue.component("w-button", Button);
 Vue.component("w-icon", Icon);
 Vue.component("w-button-group", ButtonGroup);

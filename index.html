@@ -10,9 +10,24 @@
 
 <body>
   <div id="app">
-    <button @click="showToast1">top</button>
-    <button @click="showToast2">middle</button>
-    <button @click="showToast3">bottom</button>
+    <w-tabs selected="sports">
+      <w-tabs-head>
+        <w-tabs-item name="sports">体育</w-tabs-item>
+        <w-tabs-item name="finance">经济</w-tabs-item>
+        <w-tabs-item name="history">历史</w-tabs-item>
+      </w-tabs-head>
+      <w-tabs-body>
+        <w-tabs-pane name="sports">
+          体育新闻
+        </w-tabs-pane>
+        <w-tabs-pane name="finance">
+          财经新闻
+        </w-tabs-pane>
+        <w-tabs-pane name="history">
+          历史趣事
+        </w-tabs-pane>
+      </w-tabs-body>
+    </w-tabs>
   </div>
   <script src="./src/app.js"></script>
 </body>
