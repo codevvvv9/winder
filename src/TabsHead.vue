@@ -1,6 +1,7 @@
 <template lang="">
   <div class="tabsHead">
     <slot></slot>
+    <slot name="actions"></slot>
   </div>
 </template>
 <script>

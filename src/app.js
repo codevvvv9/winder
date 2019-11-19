@@ -42,7 +42,8 @@ new Vue({
   data() {
     return {
       isLoading: false,
-      message: "hi, v-model"
+      message: "hi, v-model",
+      selectedTab: ""
     };
   },
   created() {},

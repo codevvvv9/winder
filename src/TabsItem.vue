@@ -5,7 +5,13 @@
 </template>
 <script>
 export default {
-  name: "WinderTabsItem"
+  name: "WinderTabsItem",
+  props: {
+    disabled: {
+      type: Boolean,
+      default: false
+    }
+  }
 }
 </script>
 <style lang="">
