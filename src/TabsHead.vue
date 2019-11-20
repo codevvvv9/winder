@@ -6,7 +6,8 @@
 </template>
 <script>
 export default {
-  name: "WinderTabsHead"
+  name: "WinderTabsHead",
+  inject: ['eventBus'],
 }
 </script>
 <style lang="">

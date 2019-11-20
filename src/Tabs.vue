@@ -4,6 +4,7 @@
   </div>
 </template>
 <script>
+import Vue from 'vue'
 export default {
   name: "WinderTabs",
   props: {
@@ -19,8 +20,20 @@ export default {
       }
     }
   },
+  data() {
+    return {
+      eventBus: new Vue()
+    }
+  },
+  provide() {
+    return {
+      eventBus: this.eventBus
+    }
+  },
   created() {
-    this.$emit("update:selected", "emitMessage")
+    // this.$emit("update:selected", "emitMessage")
+    // console.log('this.eventBus', this.eventBus);
+    // console.log('this', this);
   },
 }
 </script>

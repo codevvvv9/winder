@@ -1,5 +1,5 @@
 <template lang="">
-  <div class="tabsItem">
+  <div class="tabsItem" @click="itemClick">
     <slot></slot>
   </div>
 </template>
@@ -10,8 +10,23 @@ export default {
     disabled: {
       type: Boolean,
       default: false
+    },
+    name: {
+      type: String | Number,
+      required: true
     }
-  }
+  },
+  inject: ['eventBus'],
+  created() {
+    this.eventBus.$on("update:selected", (name) => {
+      console.log('name is', name);
+    })
+  },
+  methods: {
+    itemClick() {
+      this.eventBus.$emit("update:selected", this.name)
+    }
+  },
 }
 </script>
 <style lang="">

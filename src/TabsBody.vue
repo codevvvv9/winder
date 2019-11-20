@@ -5,7 +5,10 @@
 </template>
 <script>
 export default {
-  name: "WinderTabsBody"
+  name: "WinderTabsBody",
+  inject: ['eventBus'],
+  created() {
+  },
 }
 </script>
 <style lang="">
