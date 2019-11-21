@@ -1,5 +1,5 @@
 <template lang="">
-  <div class="tabsPane">
+  <div class="tabsPane" :class="tabsPaneClasses">
     <slot></slot>
   </div>
 </template>
@@ -7,21 +7,40 @@
   export default {
     name: "WinderTabsPane",
     inject: ['eventBus'],
+    data() {
+      return {
+        active: false
+      }
+    },
     props: {
-      // name: {
-      //   type: String | Number,
-      //   required: true
-      // }
+      name: {
+        type: String | Number,
+        required: true
+      }
+    },
+    computed: {
+      tabsPaneClasses() {
+        return {
+          active: this.active
+        }
+      }
     },
     created() {
       this.eventBus.$on("update:selected", (name) => {
-        console.log('name is', name);
+        if (this.name === name) {
+          this.active = true
+        } else {
+          this.active = false
+        }
       })
     },
-    methods: {
-    },
+    methods: {},
   }
 </script>
-<style lang="">
-  .tabsPane {}
+<style lang="scss" scoped>
+  .tabsPane {
+    &.active {
+      background: green;
+    }
+  }
 </style>

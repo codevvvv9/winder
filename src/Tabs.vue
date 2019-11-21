@@ -35,6 +35,9 @@ export default {
     // console.log('this.eventBus', this.eventBus);
     // console.log('this', this);
   },
+  mounted() {
+    this.eventBus.$emit("update:selected", this.selected)
+  },
 }
 </script>
 <style lang="">

@@ -1,11 +1,16 @@
 <template lang="">
-  <div class="tabsItem" @click="itemClick">
+  <div class="tabsItem" @click="itemClick" :class="tabsItemClasses">
     <slot></slot>
   </div>
 </template>
 <script>
 export default {
   name: "WinderTabsItem",
+  data() {
+    return {
+      active: false
+    }
+  },
   props: {
     disabled: {
       type: Boolean,
@@ -16,10 +21,21 @@ export default {
       required: true
     }
   },
+  computed: {
+    tabsItemClasses() {
+      return {
+        active: this.active
+      }
+    }
+  },
   inject: ['eventBus'],
   created() {
     this.eventBus.$on("update:selected", (name) => {
-      console.log('name is', name);
+      if (this.name === name) {
+        this.active = true
+      } else {
+        this.active = false
+      }
     })
   },
   methods: {
@@ -29,8 +45,11 @@ export default {
   },
 }
 </script>
-<style lang="">
+<style lang="scss" scoped>
   .tabsItem {
-    
+    padding: 0 2em;
+    &.active {
+      background: green
+    }
   }
 </style>

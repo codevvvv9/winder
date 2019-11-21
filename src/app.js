@@ -43,7 +43,7 @@ new Vue({
     return {
       isLoading: false,
       message: "hi, v-model",
-      selectedTab: ""
+      selectedTab: "finance"
     };
   },
   created() {},
