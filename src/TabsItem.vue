@@ -46,10 +46,16 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+  $color: blue;
   .tabsItem {
     padding: 0 2em;
+    cursor: pointer;
+    height: 100%;
+    display: flex;
+    align-items: center;
     &.active {
-      background: green
+      color: $color;
+      font-weight: bold;
     }
   }
 </style>
