@@ -23,7 +23,6 @@ describe("Toast", () => {
       }).$mount(div);
       vm.$on("close", () => {
         expect(document.body.contains(vm.$el)).to.eq(false);
-        console.log("done is coming");
         done();
       });
     });
