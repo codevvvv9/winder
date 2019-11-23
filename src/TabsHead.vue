@@ -11,10 +11,11 @@
   export default {
     name: "WinderTabsHead",
     inject: ['eventBus'],
-    created() {
+    mounted() {
       this.eventBus.$on("update:selected", (name, vm) => {
-        console.log('name is', name);
-        console.log('vm.$el', vm.$el);
+        let { width, height, top, left } = vm.$el.getBoundingClientRect()
+        this.$refs.line.style.left = `${left}px`
+        this.$refs.line.style.width = `${width}px`
       })
     },
   }
@@ -22,19 +23,24 @@
 <style scoped lang="scss">
   $tabs-height: 40px;
   $color: blue;
+  $border-color: #dddddd;
   .tabsHead {
     display: flex;
-    border: 1px solid red;
     height: $tabs-height;
     position: relative;
+    border-bottom: 1px solid $border-color;
     >.line {
       position: absolute;
       bottom: 0;
       border-bottom: 1px solid $color;
-      width: 100px;
+      transition: all 350ms;
     }
     >.actionWrapper {
       margin-left: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1em;
     }
   }
 </style>
