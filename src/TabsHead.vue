@@ -13,6 +13,8 @@
     inject: ['eventBus'],
     created() {
       this.eventBus.$on("update:selected", (name, vm) => {
+        console.log('name is', name);
+        console.log('vm.$el', vm.$el);
       })
     },
   }
@@ -27,7 +29,6 @@
     position: relative;
     >.line {
       position: absolute;
-      top: 0;
       bottom: 0;
       border-bottom: 1px solid $color;
       width: 100px;

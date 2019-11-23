@@ -40,7 +40,7 @@ export default {
   },
   methods: {
     itemClick() {
-      this.eventBus.$emit("update:selected", this.name)
+      this.eventBus.$emit("update:selected", this.name, this)
     }
   },
 }
@@ -48,8 +48,8 @@ export default {
 <style lang="scss" scoped>
   $color: blue;
   .tabsItem {
-    padding: 0 2em;
     cursor: pointer;
+    padding: 0 2em;
     height: 100%;
     display: flex;
     align-items: center;

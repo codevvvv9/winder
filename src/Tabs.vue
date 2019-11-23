@@ -40,7 +40,6 @@ export default {
       if (vm.$options.name === "WinderTabsHead") {
         vm.$children.forEach(childVm => {
           if (childVm.$options.name === "WinderTabsItem" && childVm.name === this.selected) {
-            console.log(childVm.$el);
             this.eventBus.$emit("update:selected", this.selected, childVm)
           }
         });
