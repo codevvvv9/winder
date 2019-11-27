@@ -1,9 +1,11 @@
 <template>
   <div class="popover" @click.stop="popoverClick">
-    <div class="contentWrapper" v-if="contentVisible" @click.stop>
+    <div ref="contentWrapper" class="contentWrapper" v-if="contentVisible" @click.stop>
       <slot name="content"></slot>
     </div>
-    <slot></slot>
+    <span ref="slotWrapper">
+      <slot></slot>
+    </span>
   </div>
 </template>
 
@@ -20,6 +22,11 @@ export default {
       this.contentVisible = !this.contentVisible
       if (this.contentVisible === true) {
         this.$nextTick(() => {
+          let contentWrapperEl = this.$refs.contentWrapper
+          document.body.appendChild(contentWrapperEl)
+          let { width, height, top, left } = this.$refs.slotWrapper.getBoundingClientRect()
+          contentWrapperEl.style.left = `${left}px`
+          contentWrapperEl.style.top = `${top}px`
           let eventHandler = () => {
             console.log('关闭');
             this.contentVisible = false
@@ -40,12 +47,11 @@ export default {
     display: inline-block;
     position: relative;
     vertical-align: top;
+  }
     .contentWrapper {
       position: absolute;
-      bottom: 100%;
-      left: 0;
       border: 1px solid red;
-      box-shadow: 0 0 3px rgba(0, 0, 0, 0.3)
+      box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+      transform: translateY(-100%);
     }
-  }
 </style>
