@@ -25,8 +25,9 @@ export default {
           let contentWrapperEl = this.$refs.contentWrapper
           document.body.appendChild(contentWrapperEl)
           let { width, height, top, left } = this.$refs.slotWrapper.getBoundingClientRect()
-          contentWrapperEl.style.left = `${left}px`
-          contentWrapperEl.style.top = `${top}px`
+          console.log('top', top);
+          contentWrapperEl.style.left = `${left+window.scrollX}px`
+          contentWrapperEl.style.top = `${top + window.scrollY}px`
           let eventHandler = () => {
             console.log('关闭');
             this.contentVisible = false
