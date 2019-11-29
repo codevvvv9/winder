@@ -78,6 +78,9 @@ new Vue({
           position
         }
       );
+    },
+    blueClick() {
+      console.log('blue');
     }
   }
 });
