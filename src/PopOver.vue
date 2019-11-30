@@ -1,5 +1,5 @@
 <template>
-  <div class="popover" @click.stop="popoverClick">
+  <div class="popover" @click.stop="popoverClick" ref="popover">
     <div ref="contentWrapper" class="contentWrapper" v-if="contentVisible">
       <slot name="content"></slot>
     </div>
@@ -18,6 +18,13 @@
       }
     },
     methods: {
+      //点击事件的监听器
+      eventHandler(e) {
+        if (this.$refs.contentWrapper && (this.$refs.contentWrapper === e.target || this.$refs.contentWrapper.contains(e.target))) {
+          return
+        }
+        this.close()
+      },
       //添加contentWrapper到body,并定位
       setContentWrapperPosition() {
         let contentWrapperEl = this.$refs.contentWrapper
@@ -31,27 +38,24 @@
         contentWrapperEl.style.left = `${left+window.scrollX}px`
         contentWrapperEl.style.top = `${top + window.scrollY}px`
       },
-      //关闭contentWrapper
-      closeContentWrapper() {
-        let eventHandler = (e) => {
-          if (this.$refs.contentWrapper && !this.$refs.contentWrapper.contains(e.target)) {
-            //点击的是内容区域不想关闭弹框
-            console.log('button click事件关闭');
-            this.contentVisible = false
-            document.removeEventListener("click", eventHandler)
-          }
-        }
-        document.addEventListener("click", eventHandler)
+      open() {
+        this.contentVisible = true
+        this.$nextTick(() => {
+          this.setContentWrapperPosition()
+          document.addEventListener("click", this.eventHandler)
+        })
+      },
+      close() {
+        this.contentVisible = false
+        document.removeEventListener("click", this.eventHandler)
       },
       popoverClick(event) {
         let clickTarget = event.target
         if (this.$refs.slotWrapper.contains(clickTarget)) {
-          this.contentVisible = !this.contentVisible
           if (this.contentVisible === true) {
-            this.$nextTick(() => {
-              this.setContentWrapperPosition()
-              this.closeContentWrapper()
-            })
+            this.close()
+          } else {
+            this.open()
           }
         }
       }
