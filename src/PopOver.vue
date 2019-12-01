@@ -3,7 +3,7 @@
     <div ref="contentWrapper" class="contentWrapper" v-if="contentVisible">
       <slot name="content"></slot>
     </div>
-    <span ref="slotWrapper">
+    <span ref="slotWrapper" style="display: inline-block;">
       <slot></slot>
     </span>
   </div>
@@ -20,7 +20,7 @@
     methods: {
       //点击事件的监听器
       eventHandler(e) {
-        if (this.$refs.contentWrapper && (this.$refs.contentWrapper === e.target || this.$refs.contentWrapper.contains(e.target))) {
+        if (this.$refs.popover && (this.$refs.popover === e.target || this.$refs.popover.contains(e.target))) {
           return
         }
         this.close()
@@ -64,6 +64,8 @@
 </script>
 
 <style lang="scss" scoped>
+  $border-color: #333;
+  $border-radius: 4px;
   .popover {
     display: inline-block;
     position: relative;
@@ -72,8 +74,33 @@
 
   .contentWrapper {
     position: absolute;
-    border: 1px solid red;
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
     transform: translateY(-100%);
+    padding: .5em 1em;
+    margin-top: -10px;
+    &::before {
+      content: "";
+      display: block;
+      border: 10px solid transparent;
+      width: 0;
+      height: 0;
+      border-top-color: black;
+      position: absolute;
+      top: 100%;
+      left: 10px;
+    }
+    &::after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 0;
+      border: 10px solid transparent;
+      border-top-color: white;
+      position: absolute;
+      top: calc(100% - 1px);
+      left: 10px;
+    }
+    
   }
 </style>
