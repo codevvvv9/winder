@@ -10,25 +10,26 @@
     * {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
+      /* box-sizing: border-box; */
+      --border-color: #999999;
     }
     :root {
-  --button-height: 32px;
-  --font-size: 14px;
-  --button-bg: white;
-  --button-active-bg: #eee;
-  --border-radius: 4px;
-  --color: #333;
-  --border-color: #999999;
-  --border-color-hover: #666;
-}
+      --button-height: 32px;
+      --font-size: 14px;
+      --button-bg: white;
+      --button-active-bg: #eee;
+      --border-radius: 4px;
+      --color: #333;
+      --border-color: #999999;
+      --border-color-hover: #666;
+    }
     body {
       margin: 0;
     }
   </style>
   <body>
     <div id="app">
-      <div style="overflow: hidden;padding: 50px;">
+      <div style="overflow: hidden;padding: 60px;">
         <w-popover>
           <template slot="content">
             <div>popover内容</div>
@@ -42,7 +43,7 @@
           <w-button>点我</w-button>
         </w-popover>
       </div>
-      </div>
+    </div>
     <script src="./src/app.js"></script>
   </body>
 </html>

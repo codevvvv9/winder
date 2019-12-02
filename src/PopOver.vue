@@ -23,6 +23,9 @@
         if (this.$refs.popover && (this.$refs.popover === e.target || this.$refs.popover.contains(e.target))) {
           return
         }
+        if (this.$refs.contentWrapper && (this.$refs.contentWrapper === e.target || this.$refs.contentWrapper.contains(e.target))) {
+          return
+        }
         this.close()
       },
       //添加contentWrapper到body,并定位
@@ -79,27 +82,26 @@
     transform: translateY(-100%);
     padding: .5em 1em;
     margin-top: -10px;
-    &::before {
+    max-width: 20em;
+    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.5));
+    word-break: break-all;
+    background: white;
+    &::before, &::after {
       content: "";
       display: block;
       border: 10px solid transparent;
       width: 0;
       height: 0;
-      border-top-color: black;
       position: absolute;
-      top: 100%;
       left: 10px;
     }
+    &::before {
+      border-top-color: black;
+      top: 100%;
+    }
     &::after {
-      content: "";
-      display: block;
-      width: 0;
-      height: 0;
-      border: 10px solid transparent;
       border-top-color: white;
-      position: absolute;
       top: calc(100% - 1px);
-      left: 10px;
     }
     
   }
