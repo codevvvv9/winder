@@ -149,10 +149,12 @@
       &::before {
         border-top-color: black;
         top: 100%;
+        border-bottom: none;
       }
       &::after {
         border-top-color: white;
         top: calc(100% - 1px);
+        border-bottom: none;
       }
     }
     &.position-bottom {
@@ -162,11 +164,13 @@
       }
       &::before {
         border-bottom-color: black;
+        border-top: none;
         bottom: 100%;
       }
       &::after {
         border-bottom-color: white;
         bottom: calc(100% - 1px);
+        border-top: none;
       }
     }
     &.position-left {
@@ -179,10 +183,12 @@
       &::before {
         left: 100%;
         border-left-color: black;
+        border-right: none;
       }
       &::after {
         border-left-color: white;
         left: calc(100% - 1px);
+        border-right: none;
       }
     }
     &.position-right {
@@ -194,10 +200,12 @@
       &::before {
         right: 100%;
         border-right-color: black;
+        border-left: none;
       }
       &::after {
         border-right-color: white;
         right: calc(100% - 1px);
+        border-left: none;
       }
     }
   }
