@@ -31,9 +31,10 @@
     <div id="app" style="padding: 60px;">
       <div style="overflow: hidden;padding-top: 60px; padding-bottom: 60px;">
         <w-popover>
-          <template slot="content">
-            <div>popover内容</div>
-          </template>
+          <template slot="content" slot-scope="{ close }">
+              <div>popover内容,我有可能会特别多的数据哦，你要自己做好适配</div>
+              <w-button @click="close">关闭吧</w-button>
+            </template>
           <w-button>点我</w-button>
         </w-popover>
         <w-popover position="bottom">
@@ -57,8 +58,9 @@
       </div>
       <div style="overflow: hidden;padding-top: 60px; padding-bottom: 60px;">
           <w-popover trigger="hover">
-            <template slot="content">
-              <div>popover内容</div>
+            <template slot="content" slot-scope="{ close }">
+              <div>popover内容,我有可能会特别多的数据哦，你要自己做好适配</div>
+              <w-button @click="close">关闭吧</w-button>
             </template>
             <w-button>点我</w-button>
           </w-popover>
