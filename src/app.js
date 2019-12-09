@@ -18,7 +18,11 @@ import TabsHead from './TabsHead.vue'
 import TabsItem from './TabsItem.vue'
 import TabsPane from './TabsPane.vue'
 import Popover from './Popover.vue'
+import Collapse from './Collapse.vue'
+import CollapseItem from './CollapseItem.vue'
 
+Vue.component("w-collapse", Collapse)
+Vue.component("w-collapse-item", CollapseItem)
 Vue.component("w-popover", Popover)
 Vue.component("w-tabs", Tabs)
 Vue.component("w-tabs-body", TabsBody)
