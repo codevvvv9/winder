@@ -1,5 +1,5 @@
 <template>
-  <div class="collapseItem" @click="open = !open">
+  <div class="collapseItem" @click="showContent">
     <div class="title">
       {{ title }}
     </div>
@@ -17,6 +17,7 @@ export default {
       required: true
     }
   },
+  inject: ['eventBus'],
   data() {
     return {
       open: false
@@ -29,13 +30,27 @@ export default {
 
   },
   mounted() {
-
+    this.eventBus && this.eventBus.$on("update:selected", (vm) => {
+      if (vm !== this) {
+        this.close()
+      }
+    })
   },
   watch: {
 
   },
   methods: {
-
+    showContent() {
+      if (this.open) {
+        this.open = false
+      } else {
+        this.open = true
+        this.eventBus && this.eventBus.$emit("update:selected", this)
+      }
+    },
+    close() {
+      this.open = false
+    }
   },
   components: {
 
