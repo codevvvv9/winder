@@ -49,7 +49,7 @@ new Vue({
     return {
       isLoading: false,
       message: "hi, v-model",
-      selectedTab: "sports"
+      selectedTab: "2"
     };
   },
   created() {},
