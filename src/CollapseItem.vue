@@ -1,7 +1,7 @@
 <template>
   <div class="collapseItem" @click="showContent">
     <div class="title">
-      {{ title }}
+      {{ title }} {{ single }}
     </div>
     <div class="content" v-if="open">
       <slot></slot>
@@ -24,7 +24,8 @@ export default {
   inject: ['eventBus'],
   data() {
     return {
-      open: false
+      open: false,
+      single: false
     };
   },
   computed: {
@@ -36,7 +37,9 @@ export default {
   mounted() {
     this.eventBus && this.eventBus.$on("update:selected", (name) => {
       if (name !== this.name) {
-        this.close()
+        if (this.single) {
+          this.close()
+        }
       } else {
         this.show()
       }
