@@ -35,8 +35,8 @@ export default {
 
   },
   mounted() {
-    this.eventBus && this.eventBus.$on("update:selected", (name) => {
-      if (name !== this.name) {
+    this.eventBus && this.eventBus.$on("update:selected", (names) => {
+      if (names.includes(this.name)) {
         if (this.single) {
           this.close()
         }

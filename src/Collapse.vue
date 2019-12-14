@@ -14,7 +14,7 @@ export default {
       default: false
     },
     selected: {
-      type: String
+      type: Array
     }
   },
   data() {
@@ -37,9 +37,9 @@ export default {
     this.eventBus.$on("update:selected", (name) => {
       this.$emit("update:selected", name)
     })
-    this.$children.forEach(vm => {
-      vm.single = this.single
-    });
+    // this.$children.forEach(vm => {
+    //   vm.single = this.single
+    // });
   },
 }
 </script>
