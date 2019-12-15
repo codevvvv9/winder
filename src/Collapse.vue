@@ -19,7 +19,8 @@ export default {
   },
   data() {
     return {
-      eventBus: new Vue()
+      eventBus: new Vue(),
+      selectedCopy: this.selected
     }
   },
   provide() {
@@ -34,8 +35,20 @@ export default {
   },
   mounted() {
     this.eventBus.$emit("update:selected", this.selected)
-    this.eventBus.$on("update:selected", (name) => {
-      this.$emit("update:selected", name)
+    this.eventBus.$on("update:addSelected", (name) => {
+      if (this.single) {
+        this.selectedCopy = [name]
+      } else {
+        this.selectedCopy.push(name)
+      }
+      this.eventBus.$emit("update:selected", this.selectedCopy)
+      this.$emit("update:selected", this.selectedCopy)
+    })
+    this.eventBus.$on("update:removeSelected", (name) => {
+      let index = this.selectedCopy.indexOf(name)
+      this.selectedCopy.splice(index, 1)
+      this.eventBus.$emit("update:selected", this.selectedCopy)
+      this.$emit("update:selected", this.selectedCopy)
     })
     // this.$children.forEach(vm => {
     //   vm.single = this.single
