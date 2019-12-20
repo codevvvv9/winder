@@ -10,7 +10,7 @@ module.exports = {
       },
       {
         title: "Components",
-        children: ["/components/Button"]
+        children: ["/components/button"]
       }
     ]
   }
