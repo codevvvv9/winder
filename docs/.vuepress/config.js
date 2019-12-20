@@ -1,11 +1,17 @@
 module.exports = {
-  title: 'Hello Winder',
-  description: 'Just playing around',
+  title: "Hello Winder",
+  description: "Just playing around",
   themeConfig: {
     sidebar: [
       // '/',
-      '/install/',
-      '/get-started/',
+      {
+        title: "Introduction",
+        children: ["/install/", "/get-started/"]
+      },
+      {
+        title: "Components",
+        children: ["/components/Button"]
+      }
     ]
   }
-}
+};
