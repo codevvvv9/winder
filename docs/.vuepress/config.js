@@ -1,4 +1,5 @@
 module.exports = {
+  base: "/winder/",
   title: "Hello Winder",
   description: "Just playing around",
   themeConfig: {
@@ -10,7 +11,11 @@ module.exports = {
       },
       {
         title: "Components",
-        children: ["/components/button"]
+        children: [
+          "/components/button",
+          "/components/input",
+          "/components/grid",
+        ]
       }
     ]
   }
