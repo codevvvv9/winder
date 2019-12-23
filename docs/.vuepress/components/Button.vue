@@ -8,7 +8,7 @@
     <w-button icon="left">上一页</w-button>
     <w-button icon="right" iconPosition="right">下一页</w-button>
 
-    <pre><code>{{ content }}</code></pre>
+    <!-- <pre><code>{{ content }}</code></pre> -->
   </div>
 </template>
 
