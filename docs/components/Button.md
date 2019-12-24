@@ -4,8 +4,8 @@ title: Button
 
 # Button
 
-## Basic Use
-This is the basic use of the Button component.  
+## Basic Usage
+This is the basic usage of the Button component.  
 
 <ClientOnly>
   <Button></Button>

@@ -45,10 +45,12 @@ module.exports = {
         sidebar: [
           {
             title: "Introduction",
+            collapsable: false,
             children: ["/introduction/", "/get-started/"]
           },
           {
             title: "Components",
+            collapsable: false,
             children: [
               "/components/button",
               "/components/input",
