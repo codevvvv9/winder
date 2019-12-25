@@ -42,7 +42,7 @@ In this case, input is readonly.
 <w-input :readonly="true" value="这是只读的"></w-input>
 ```
 ## Error Message
-In this case, you got a error messgae.
+In this case, you got a error message.
 
 <ClientOnly>
   <InputError></InputError>
