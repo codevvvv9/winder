@@ -10,7 +10,7 @@ There may be some :bug: here.:joy:
 
 So I hope you will give more comments util :100:. :yum:
 
-My :mailbox: is *wslsdust@163.com* and :globe_with_meridians: is [codevvvv9](https://github.com/codevvvv9/winder).
+My :mailbox: is **wslsdust@163.com** and :globe_with_meridians: is [codevvvv9](https://github.com/codevvvv9/winder).
 
 I hope to receive your :mailbox_with_mail:.:heart:
 :::
