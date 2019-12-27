@@ -16,7 +16,7 @@ This is the basic usage of the Grid component, it contains Col and Row component
   <w-col span="12" class="darkBlueCol">col-12</w-col>
 </w-row>
 ```
-You should use *gutter* in *Col* and use *span* in *Col*, but wrap by default.
+You should use **gutter** in **Row** and use **span** in **Col**, but wrap by default.
 In this case, no wrap.
 
 ``` css
