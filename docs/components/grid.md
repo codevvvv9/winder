@@ -33,3 +33,24 @@ $second-color: #2fc0ff;
 }
 ```
 ## CSS Media Query
+Grid components display differently in different devices size.
+
+<ClientOnly>
+  <GridMedia></GridMedia>
+</ClientOnly>
+
+``` html
+<w-row gutter="20">
+  <w-col span="12" class="blueCol" :ipad="ipadObj">col-12</w-col>
+  <w-col span="12" class="darkBlueCol">col-12</w-col>
+</w-row>
+```
+In this case ipad need a ipad prop, named ipadObj.
+
+``` javascript
+ipadObj: {
+  span: "3",
+  offset: "2"
+}
+```
+
