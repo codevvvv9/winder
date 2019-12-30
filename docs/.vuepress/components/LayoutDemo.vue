@@ -1,9 +1,9 @@
 <template>
   <div>
     <w-layout>
-      <w-header>header</w-header>
-      <w-content>content</w-content>
-      <w-footer>footer</w-footer>
+      <w-header class="w-header">header</w-header>
+      <w-content class="w-content">content</w-content>
+      <w-footer class="w-footer">footer</w-footer>
     </w-layout>
   </div>
 </template>
@@ -26,5 +26,14 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
+  .w-header, .w-footer {
+    text-align: center;
+    line-height: 60px;
+    background: #b3c0d1;
+  }
+  .w-content {
+    line-height: 160px;
+    background: #e9eef3;
+    text-align: center;
+  }
 </style>
