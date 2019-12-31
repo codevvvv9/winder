@@ -29,3 +29,8 @@ This is the basic usage of the Layout component, it contain four parts-header,co
   }
 </style>
 ```
+## Sider
+
+<ClientOnly>
+  <LayoutSider></LayoutSider>
+</ClientOnly>
