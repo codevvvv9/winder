@@ -13,6 +13,7 @@ export default {
     }
   },
   mounted() {
+    //当layout组件加载完毕之后，看所有的子组件，是不是有一个叫WinderSider的组件
     this.$children.forEach(vm => {
       if (vm.$options.name === "WinderSider") {
         this.layoutClasses.hasSider = true
