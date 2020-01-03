@@ -1,4 +1,4 @@
-<template lang="">
+<template>
   <div class="tabsBody">
     <slot></slot>
   </div>
@@ -11,7 +11,7 @@ export default {
   },
 }
 </script>
-<style lang="">
+<style>
   .tabsBody {
     
   }

@@ -1,4 +1,4 @@
-<template lang="">
+<template>
   <div class="tabsItem" @click="onItemClick" :class="tabsItemClasses" :data-name="name">
     <slot></slot>
   </div>

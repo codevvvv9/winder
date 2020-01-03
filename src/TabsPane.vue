@@ -1,4 +1,4 @@
-<template lang="">
+<template>
   <div class="tabsPane" :class="tabsPaneClasses" v-if="active">
     <slot></slot>
   </div>
