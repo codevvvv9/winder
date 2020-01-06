@@ -2,7 +2,7 @@
   <div>
     <w-tabs selected="finance">
       <w-tabs-head>
-        <w-tabs-item name="sports"> 体育 </w-tabs-item>
+        <w-tabs-item name="sports" :disabled="true"> 体育 </w-tabs-item>
         <w-tabs-item name="finance"> 经济</w-tabs-item>
         <w-tabs-item name="history"> 历史 </w-tabs-item>
       </w-tabs-head>
