@@ -61,8 +61,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  $border-radius: 4px;
-  $border-color: #dddddd;
+  @import "var";
   .collapseItem {
     > .title {
       border: 1px solid $border-color;
