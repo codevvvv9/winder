@@ -13,7 +13,7 @@ This is the basic usage of the Toast component.
 
 
 
-This component can be closed automatically or clicked to close, the default position is shown top.
+This component can be closed automatically or clicked to close, the default position is shown top, it have three position: top, bottom, middle.
 
 ``` html
 <w-toast :autoClose="false" position="middle">Toast</w-toast>
