@@ -37,13 +37,8 @@
   }
 </script>
 <style lang="scss" scoped>
-  $height: 32px;
-  $border-color: #999;
-  $border-color-hover: #666;
-  $border-radius: 4px;
-  $font-size: 12px;
-  $box-shadow-color: rgb(0, 0, 0, 0.5);
-  $border-error: #f1453d;
+  @import "var";
+  $height: $input-height;
   .wrapper {
     display: inline-flex;
     font-size: $font-size;

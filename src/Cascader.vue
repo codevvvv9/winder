@@ -1,11 +1,12 @@
 <template>
-  <div>
-
+  <div class="cascader">
+    <slot></slot>
   </div>
 </template>
 
 <script>
 export default {
+  name: "WinderCascader",
   props: {
 
   },
@@ -36,5 +37,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
+  @import "var";
+  .cascader {
+    
+  }
 </style>
