@@ -1,37 +1,27 @@
 <template>
   <div class="cascader">
-    <slot></slot>
+    <div class="trigger">
+      <slot></slot>
+    </div>
+    <div class="popover">
+      <div v-for="(item, index) in source" :key="index">
+        <cascader-item :sourceItem="item"></cascader-item>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import CascaderItem from "./CascaderItem"
 export default {
   name: "WinderCascader",
   props: {
-
-  },
-  data() {
-    return {
-
-    };
-  },
-  computed: {
-
-  },
-  created() {
-
-  },
-  mounted() {
-
-  },
-  watch: {
-
-  },
-  methods: {
-
+    source: {
+      type: Array
+    }
   },
   components: {
-
+    CascaderItem
   },
 };
 </script>
@@ -39,6 +29,6 @@ export default {
 <style scoped lang="scss">
   @import "var";
   .cascader {
-    
+
   }
 </style>
