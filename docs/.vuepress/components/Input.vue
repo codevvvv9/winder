@@ -1,6 +1,6 @@
 <template>
   <div>
-    <w-input value="请输入姓名"></w-input>
+    <w-input value="请输入内容"></w-input>
   </div>
 </template>
 
