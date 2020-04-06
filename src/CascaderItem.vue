@@ -11,18 +11,14 @@
 </template>
 
 <script>
-const componentItem =  {
+export default {
   name: "WinderCascaderItem",
   props: {
     sourceItem: {
       type: Object
     }
-  },
-  components: {
-    WinderCascaderItem: componentItem
-  },
+  }
 };
-export default componentItem
 </script>
 
 <style scoped lang="scss">
