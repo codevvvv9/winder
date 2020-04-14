@@ -2,7 +2,7 @@
   <div class="cascader">
     <div class="trigger" @click="handleTrigger"></div>
     <div class="popover" v-if="popoverVisible">
-      <cascader-items :items="source"></cascader-items>
+      <cascader-items :items="source" :height="height"></cascader-items>
     </div>
   </div>
 </template>
@@ -14,6 +14,9 @@ export default {
   props: {
     source: {
       type: Array
+    },
+    height: {
+      type: String
     }
   },
   components: {
@@ -35,6 +38,7 @@ export default {
 <style scoped lang="scss">
   @import "var";
   .cascader {
+    position: relative;
     .trigger {
       width: 100px;
       height: 32px;
@@ -42,7 +46,9 @@ export default {
     }
     .popover {
       // width: 80px;
-      height: 200px; 
+      position: absolute;
+      background: white;
+      // height: 200px; 
       display: flex;
       border: 2px solid green;
       .label {

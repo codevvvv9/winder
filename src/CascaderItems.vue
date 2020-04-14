@@ -1,5 +1,5 @@
 <template>
-  <div class="cascaderItem">
+  <div class="cascaderItem" :style="{height: height}">
     <div class="left">
       <div
         class="label"
@@ -11,7 +11,7 @@
       </div>
     </div>
     <div class="right" v-if="rightItems">
-      <winder-cascader-items :items="rightItems"></winder-cascader-items>
+      <winder-cascader-items :items="rightItems" :height="height"></winder-cascader-items>
     </div>
   </div>
 </template>
@@ -23,6 +23,9 @@ export default {
     items: {
       type: Array,
     },
+    height: {
+      type: String
+    }
   },
   data() {
     return {
@@ -48,11 +51,14 @@ export default {
   //下面两句保证高度不会过分的长
   align-items: flex-start;
   justify-content: flex-start;
+  height: 100px;
   .left {
     border: 1px solid red;
+    height: 100%;;
   }
   .right {
-    margin-top: -1px;
+    // margin-top: -1px;
+    height: 100%;;
   }
 }
 </style>
